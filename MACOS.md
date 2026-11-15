@@ -42,4 +42,4 @@ Bred strategy tables are kept in `~/Library/Application Support/Axelrod/bred.jso
 
 To remove it: delete the folder, `~/Applications/Axelrod.app` and `~/.local/bin/axelrod`.
 
-If something doesn't work, please write to zklaas@yahoo.ca.
+If something doesn't work, please write to zklaastest-testing@yahoo.com.

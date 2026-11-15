@@ -40,4 +40,4 @@ Bred strategy tables are kept in `%APPDATA%\Axelrod\bred.json`.
 To remove it: delete the folder, the Start-menu entry (Axelrod) and
 `%LOCALAPPDATA%\Programs\Axelrod`.
 
-If something doesn't work, please write to zklaas@yahoo.ca.
+If something doesn't work, please write to zklaastest-testing@yahoo.com.
