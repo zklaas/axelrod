@@ -4,6 +4,18 @@ Tests strategies for the **iterated prisoner's dilemma**, after Robert
 Axelrod's computer tournaments (1980), his ecological analysis and genetic
 algorithm (1984, 1987), and later work on noise.  PyQt6 + Python stdlib.
 
+## Download
+
+Ready-to-run downloads, with nothing else to install:
+
+* **Windows:** [Axelrod-Setup-Windows.exe](https://github.com/zklaas/axelrod/releases/latest/download/Axelrod-Setup-Windows.exe)
+* **macOS** (Apple silicon): [Axelrod-macOS.dmg](https://github.com/zklaas/axelrod/releases/latest/download/Axelrod-macOS.dmg)
+* **Linux:** [Axelrod-Linux-x86_64.AppImage](https://github.com/zklaas/axelrod/releases/latest/download/Axelrod-Linux-x86_64.AppImage)
+
+The first time, Windows or macOS asks before opening it; the
+[release page](https://github.com/zklaas/axelrod/releases/latest) says what to click.
+To install from the source code instead, see below.
+
     axelrod                        the window
     axelrod list                   every strategy with a one-line summary
     axelrod explain tester         full explanation of one strategy
