@@ -72,9 +72,15 @@ jobs:
           elif [ "$RUNNER_OS" = Windows ]; then EXE=dist/Axelrod/Axelrod.exe
           else EXE=dist/Axelrod/Axelrod; fi
           "$EXE" list > /dev/null                       # the command-line part
-          set +e; timeout 20 "$EXE"; code=$?; set -e     # the window: still running = started
-          echo "window check exit code: $code"
-          [ "$code" = 124 ]
+          # the window: still running after 20 s = it started (Python's timeout works everywhere)
+          python - "$EXE" <<'PY'
+          import subprocess, sys
+          try:
+              subprocess.run([sys.argv[1]], timeout=20)
+          except subprocess.TimeoutExpired:
+              print("window started"); sys.exit(0)
+          sys.exit("the window closed by itself")
+          PY
 
       - name: Package for Windows (installer)
         if: runner.os == 'Windows'
