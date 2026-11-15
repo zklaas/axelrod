@@ -5,6 +5,7 @@ import csv
 import html
 import json
 import os
+import sys
 import random
 import traceback
 
@@ -24,7 +25,17 @@ from .profile import character_html
 from .engine import Payoffs, Settings, classify, ecological, ecology_shift, evolve, play_match, run_tournament
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BRED_FILE = os.path.join(os.path.expanduser("~"), ".config", "axelrod", "bred.json")
+def _config_dir() -> str:
+    """Config folder: %APPDATA% / %LOCALAPPDATA% on Windows, ~/Library on macOS,
+    the usual XDG folder on Linux."""
+    if os.name == "nt":
+        return os.path.join(os.environ.get("APPDATA") or os.path.expanduser("~"), "Axelrod")
+    if sys.platform == "darwin":
+        return os.path.join(os.path.expanduser("~"), "Library", "Application Support", "Axelrod")
+    return os.path.join(os.path.expanduser("~"), ".config", "axelrod")
+
+
+BRED_FILE = os.path.join(_config_dir(), "bred.json")
 W_SECOND = 0.99654
 
 # --------------------------------------------------------------- bred store
