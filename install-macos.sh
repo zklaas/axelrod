@@ -3,7 +3,7 @@
 #
 #   bash install-macos.sh
 #
-# Creates .venv in this folder with PyQt6, writes a `axelrod` command into
+# Creates .venv in this folder with PyQt6, writes the `axelrod` command into
 # ~/.local/bin, and puts a Axelrod app (with its icon) in ~/Applications, so it
 # opens from Launchpad, Spotlight or the Dock.
 set -euo pipefail
